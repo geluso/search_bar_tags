@@ -1,7 +1,15 @@
 var app = angular.module('app',[]);
 
-app.controller('Controller', ['$scope', function($scope) {
+app.controller('Controller', ['$scope', '$timeout', function($scope, $timeout) {
   $scope.input = 'loaded';
+
+  $scope.$watch('tags', function() {
+    $scope.totalInput = $scope.tags.join(" ");
+    $timeout(function() {
+      $(".flex-tags").scrollLeft(Infinity);
+    }, 0);
+  }, true);
+
   $scope.tags = [
     "ace",
     "car",
@@ -15,11 +23,15 @@ app.controller('Controller', ['$scope', function($scope) {
   ];
 
   $scope.addTag = function() {
+    if ($scope.input === "") {
+      return;
+    }
+
     $scope.tags.push($scope.input);
     $scope.input = "";
   }
 
-  $scope.remove = function() {
-    $scope.tags.pop();
+  $scope.remove = function(index) {
+    $scope.tags.splice(index, 1);
   };
 }]);

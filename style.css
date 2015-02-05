@@ -1,126 +1,49 @@
-body {
-	background-color: goldenrod;
-	font-family: monospace;
-}
-
-a {
-	color: #CC0000;
-}
-
-a:hover {
-	color: yellow;
-}
-
-a:visited {
-	color: #AA0000;
-}
-
-div {
-	background-color: white;
-	border: solid black 1px;
-  padding: 0 1em;
-  margin: 1em;
-}
-
-.center {
-  text-align: center;
-}
-
-#canvas {
-  border: solid black 1px;
-}
-
-@media (max-width: 800px) {
-  body {
-    color: green;
-  }
-}
-
-@media (min-width: 801px) and (max-width: 1200px) {
-  body {
-    color: red;
-  }
-}
-
-.search-input-container {
-  width: 30em;
-  border: solid blue 1px;
-  position: relative;
-  height: 3em;
-  padding: 0;
-  margin: 0;
-  overflow: auto;
-}
-
-.search-tags-container {
-  width: 100%;
-  border: solid green 1px;
-  position: absolute;
-  padding: 0;
-  margin: 0;
-}
-
-.tag, .flex-tag {
-  background-color: yellow;
-  margin: 0;
-  border: solid orange 1px;
-}
-
-.tags {
+.example-container {
+  width: 500px;
   display: inline-block;
-  overflow-x: auto;
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin-right: 10em;
-  width: 1000px;
-  text-align: right;
-}
-
-.search-tags-container .input {
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 
 .flex-search-box {
-  width: 400px;
-  padding: 0;
-  display: flex;
+  border: solid black 1px;
+  width: 100%;
+  display: inline-flex;
+  overflow: hidden;
+  height: 1.5em;
 }
 
-.flex-tags, .flex-input, .flex-tags-wide {
-  margin: 0;
-  padding: 0;
+.flex-tags, input {
   display: inline-block;
+  height: 2.5em;
 }
 
 .flex-tags {
   flex-shrink: 2;
-  position: relative;
+  max-width: 66%;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
-.flex-tags-wide {
-  width: 600px;
-  position: absolute;
-  right: 0;
-  text-align: right;
+.tag {
+    display: inline-block;
+    margin: 4px;
+    padding-left: .3em;
+    padding-right: .3em;
+    border: 1px solid blue;
+    background-color: lightblue;
 }
 
-.flex-tags {
-
+.tag span {
+  cursor: pointer;
 }
 
-.flex-input {
+form {
   flex-grow: 1;
 }
 
-.flex-input input {
+form input {
   width: 100%;
-}
-
-.flex-tag {
+  line-height: 2em;
+  border: none;
+  padding-left: .5em;
 }
 
