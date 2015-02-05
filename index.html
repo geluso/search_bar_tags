@@ -1,0 +1,61 @@
+<html ng-app="app">
+  <head>
+    <title></title>
+    <link rel="icon" href="http://5tephen.com/img/cheeseplane.gif" type="image/gif"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/angular.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/canvas.js" type="text/javascript"></script>
+    <script src="js/controller.js" type="text/javascript"></script>
+  </head>
+  <body ng-controller="Controller">
+
+    <div class="search-input-container">
+      <div class="search-tags-container">
+        
+        <div class="tags">
+          <span class="tag" ng-repeat="tag in tags">
+            {{tag}}
+          </span>
+        </div>
+
+        <div class="input">
+          <form type="submit" ng-submit="addTag()">
+            <input size="14" ng-model="input"></input>
+            <a ng-click="remove()">X</a>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="flex-search-box">
+      <div class="flex-tags">
+        <div class="flex-tags-wide">
+          <span class="flex-tag" ng-repeat="tag in tags track by $index">
+            {{tag}}
+          </span>
+        </div>
+      </div>
+      <div class="flex-input">
+        <form type="submit" ng-submit="addTag()">
+          <input size="14" ng-model="input"></input>
+        </form>
+      </div>
+    </div>
+
+    <div class="flex-search-box">
+      <div class="flex-tags">
+        <span class="flex-tag" ng-repeat="tag in tags track by $index">
+          {{tag}}
+        </span>
+      </div>
+      <div class="flex-input">
+        <form type="submit" ng-submit="addTag()">
+          <input size="14" ng-model="input"></input>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
